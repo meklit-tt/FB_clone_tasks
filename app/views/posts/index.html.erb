@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-<h1>Posts</h1>
+<h1>Feeds</h1>
 
 <table>
   <thead>
@@ -18,9 +18,9 @@
         <td><%= post.user.name %></td>
         <td><%= image_tag post.image.url, style:"width:250px" %></td>
         <td><%= post.content %></td>
-        <td><button type="button" class="btn btn-primary"><%= link_to 'Show', post %></button></td>
-        <td><button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_post_path(post) %></button></td>
-        <td><button type="button" class="btn btn-danger"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td><button type="button" class="btn btn-secondary"><%= link_to 'Show', post %></button></td>
+        <td><button type="button" class="btn btn-secondary"><%= link_to 'Edit', edit_post_path(post) %></button></td>
+        <td><button type="button" class="btn btn-secondary"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>
