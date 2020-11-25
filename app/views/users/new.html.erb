@@ -1,5 +1,6 @@
 <div class="container">
 <h1>Sign up</h1>
+<table class="table">
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
@@ -11,29 +12,31 @@
   </div>
 <% end %>
 
-<table class="table">
-<tbody>
-
- <%= form_with(model: @user, local: true) do |f| %>
- <tr>
-  <td> <h3> Account registration </h3></td><br></tr>
-  <tr>
-  <td> <%= f.label :name %>
-   <%= f.text_field :name %>
+<%= form_with(model: @user, local: true) do |f| %>
+<tr>
+  <td>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </td></tr>
+<tr>
+  <td>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  </td></tr>
+<tr>
+  <td>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
   </td></tr>
   <tr>
-    <td> <%= f.label :email %>
-         <%= f.email_field :email %>
+   <td>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
   </td></tr>
-  <tr>
-    <td><%= f.label :password %>
-        <%= f.password_field :password %>
-   </td></tr>
-    <tr>
-      <td><%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation %> </td>
-    </tr>
-  <tr>
-    <td class="signup-btn:hover"><%= f.submit "create my account" %> </td>
-  </tr>
- <% end %>
+  <tr style="background-color:#3498DB">
+    <td>
+  <%= f.submit "Create my account" %>
+  </td></tr>
+</div>
+</table>
+<% end %>
