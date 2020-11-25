@@ -7,12 +7,12 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </head>
 
   <body>
-    <header>
-    Facebook clone
+    <header class= "header">
+    <p class= "logo"><%= image_tag("imag.jpeg") %> </p>
     </header>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
@@ -28,7 +28,8 @@
     </div>
     <%= yield %>
     <footer>
-      <p>© 2020 Copyright Facebook project</p>
+      <p>© 2020 Copyright Facebook_clone </p>
     </footer>
+
   </body>
 </html>
